@@ -1,36 +1,18 @@
 import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
 import {Button} from '@material-ui/core';
-const credentail = require("./credentials/credentials.json");
-const data = require('./data.json'); // forward slashes will depend on the file location
-
-// import credentials from './credentials/credentials';
+import credentials from "./credentials/credentials.json";
+import data from "./data.json"; // forward slashes will depend on the file location
 
 
 const AnyReactComponent = ({title}) => {
     return (
-        <Button>
+        <Button variant={"contained"} color={"primary"}>
             {title}
         </Button>
     )
 };
 
-const handleApiLoaded = (map, maps) => {
-    // use map and maps objects
-};
-
-    function getComponent() {
-
-
-    }
-//
-// for(var i = 0; i < data.length; i++) {
-//     var obj = data[i];
-//     var name = obj[1];
-//     var location = obj[2];
-//
-//     console.log("Name: " + name + ", " + location);
-// }
 
 export default class SimpleMap extends Component {
     static defaultProps = {
@@ -45,7 +27,7 @@ export default class SimpleMap extends Component {
         return (
             <div style={{height: '100vh', width: '100%'}}>
                 <GoogleMapReact
-                    bootstrapURLKeys={{key: credentail.googleCloudPlatform.apiKey}}
+                    bootstrapURLKeys={{key: credentials.googleCloudPlatform.apiKey}}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}>
                     {data.map(e => <AnyReactComponent
