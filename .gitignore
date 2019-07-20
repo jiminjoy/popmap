@@ -28,3 +28,7 @@ src/credentials/*
 # idea
 .idea/*
 .idea/*/*
+
+# data
+src/data.json
+src/data2.json
